@@ -1,4 +1,5 @@
 open Express;
+open Belt;
 
 let app = express();
 let port = 3000;
@@ -8,9 +9,13 @@ get(app, "/", (request, response) => {
 });
 
 get(app, "/echo", (request, response) => {
-  let name = getQuery(request, "name");
+  let maybeName = getQuery(request, "name");
+  let greeting =
+    maybeName
+      ->Option.map(name => "Hello there " ++ name ++ "!")
+      ->Option.getWithDefault("Got no idea who you are :/");
 
-  send(response, "Hello there" ++ name ++ "!");
+  send(response, greeting);
 });
 
 listen(app, port);
