@@ -11,8 +11,8 @@ Pick and install your favorite LTS/Current flavor on [https://nodejs.org](https:
 ## 0. Download project source code
 
 ```
-$ git clone https://github.com/phillipj/express-typescript-example.git
-$ cd express-typescript-example
+$ git clone https://github.com/phillipj/express-reasonml-example.git
+$ cd express-reasonml-example
 ```
 
 ## 1. Install dependencies
